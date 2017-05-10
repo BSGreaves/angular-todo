@@ -18,17 +18,17 @@ app.controller("ItemCtrl", ($scope) => {
         id: 0,
         task: "mow the lawn",
         isCompleted: true,
-        assignedTo: "Callan",
+        assignedTo: "Callan"
     }, {
         id: 1,
         task: "grade quizzes",
         isCompleted: false,
-        assignedTo: "Lauren",
+        assignedTo: "Lauren"
     }, {
         id: 2,
         task: "take a nap",
         isCompleted: false,
-        assignedTo: "Zoe",
+        assignedTo: "Zoe"
     }];
 
     $scope.newItem = () => {

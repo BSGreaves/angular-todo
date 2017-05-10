@@ -42,8 +42,9 @@
 						<h3>New Todo</h3>
 					</div>
 					<div ng-show="showListView">
+						<input type="text" placeholder="Search..." ng-model="searchText">
 						<h3>Todo List</h3>
-						<div ng-repeat="item in items | filter:{isCompleted:false}">
+						<div ng-repeat="item in items | filter:{isCompleted:false} | filter: searchText">
 							<div class="panel panel-default">
 								<div class="panel-body">
 									<div class="col-xs-1"><input type="checkbox" name="" ng-checked="item.isCompleted"></div>
@@ -54,7 +55,7 @@
 							</div>
 						</div>
 						<h3>Completed</h3>
-						<div ng-repeat="item in items | filter:{isCompleted:true}">
+						<div ng-repeat="item in items | filter:{isCompleted:true}  | filter: searchText">
 							<div class="panel panel-default">
 								<div class="panel-body">
 									<div class="col-xs-1"><input type="checkbox" name="" ng-checked="item.isCompleted"></div>
