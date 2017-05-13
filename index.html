@@ -1,17 +1,77 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>My To-Dos</title>
-        <link rel="stylesheet" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" href="./styles/main.css">
-    </head>
-    <body>
-    		<h1>My To-Dos</h1>
-      	<script src="./lib/bower_components/jquery/dist/jquery.js"></script>
-      	<script src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-      	<script src="./javascripts/main.js"></script>
-    </body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>My To-Dos</title>
+		<link rel="stylesheet" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./styles/main.css">
+	</head>
+	<body ng-app="TodoApp">
+		<nav class="main-nav navbar navbar-inverse" ng-controller="NavCtrl">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Jquery Todo</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right" ng-repeat="item in navItems">
+						<li><a href="#">{{item.name}}</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div ng-controller="ItemCtrl">
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-3">
+					<button class="col-xs-6 btn btn-success" ng-click="newItem()">New Item</button>
+					<button class="col-xs-6 btn btn-info" ng-click="allItems()">All Items</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					<h1>NG Todo</h1>
+					<div ng-show="!showListView">
+						<h3>New Todo</h3>
+					</div>
+					<div ng-show="showListView">
+						<input type="text" placeholder="Search..." ng-model="searchText">
+						<h3>Todo List</h3>
+						<div ng-repeat="item in items | filter:{isCompleted:false} | filter: searchText">
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<div class="col-xs-1"><input type="checkbox" name="" ng-checked="item.isCompleted"></div>
+									<div class="col-xs-7">{{item.task}}</div>
+									<div class="col-xs-1 col-xs-offset-2">{{item.assignedTo}}</div>
+									<div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o"></button></div>
+								</div>
+							</div>
+						</div>
+						<h3>Completed</h3>
+						<div ng-repeat="item in items | filter:{isCompleted:true}  | filter: searchText">
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<div class="col-xs-1"><input type="checkbox" name="" ng-checked="item.isCompleted"></div>
+									<div class="col-xs-7">{{item.task}}</div>
+									<div class="col-xs-1  col-xs-offset-2">{{item.assignedTo}}</div>
+									<div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o"></button></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./lib/bower_components/jquery/dist/jquery.js"></script>
+		<script src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="./lib/bower_components/angular/angular.min.js"></script>
+		<script src="./javascripts/main.js"></script>
+	</body>
 </html>
