@@ -40,6 +40,17 @@
 					<h1>NG Todo</h1>
 					<div ng-show="!showListView">
 						<h3>New Todo</h3>
+						<form>
+							<div class="form-group">
+								<label>Task Description</label>
+								<input type="text" class="form-control" placeholder="Some important task" ng-model="newTask.task"/>
+							</div>
+							<div class="form-group">
+								<label>Assigned To</label>
+								<input type="text" class="form-control" placeholder="Zoe" ng-model="newTask.assignedTo"/>
+							</div>
+							<button class="btn btn-default" ng-click="addNewItem()">Submit</button>
+						</form>
 					</div>
 					<div ng-show="showListView">
 						<input type="text" placeholder="Search..." ng-model="searchText">
@@ -78,5 +89,3 @@
 		<script src="./javascripts/main.js"></script>
 	</body>
 </html>
-
-
