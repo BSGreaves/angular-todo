@@ -16,4 +16,9 @@ app.controller("ItemListCtrl", function($scope, ItemFactory) {
 		.catch(error => console.log("error in deleteItem", error));
 	};
 
+	$scope.inputChange = item => {
+		ItemFactory.editItem(item)
+		.catch(error => console.log("Error in inputChange", error));
+	};
+
 });

@@ -10,9 +10,9 @@ app.factory("ItemFactory", function($http, $q, FIREBASE_CONFIG) {
 		      Object.keys(fbItems).forEach(key => {
 		        fbItems[key].id=key;
 		        items.push(fbItems[key]);
-		      	resolve(items);
 		      });
 				}
+		    resolve(items);
 			})
 			.catch(error => {reject(error);});
 		});
@@ -28,11 +28,24 @@ app.factory("ItemFactory", function($http, $q, FIREBASE_CONFIG) {
 
 	let deleteItem = id => {
 		return $q((resolve, reject) => {
-			$http.delete(`${FIREBASE_CONFIG.databaseURL}/items/${id}.json`)
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/items/${item.id}.json`)
 			.then(result => resolve(result))
 			.catch(error => reject(error));
 		});
 	};
 
-	return {getItemList: getItemList, postNewItem: postNewItem, deleteItem: deleteItem};
+	let editItem = item => {
+		return $q((resolve, reject) => {
+			$http.put(`${FIREBASE_CONFIG.databaseURL}/items/${item.id}.json`,
+				JSON.stringify({
+					assignedTo: item.assignedTo,
+					isCompleted: item.isCompleted,
+					task: item.task
+				}))
+			.then(result => resolve(result))
+			.catch(error => reject(error));
+		});
+	};
+
+	return {getItemList: getItemList, postNewItem: postNewItem, deleteItem: deleteItem, editItem: editItem};
 });
