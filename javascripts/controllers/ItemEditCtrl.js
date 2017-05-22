@@ -1,4 +1,4 @@
-app.controller("ItemEditCtrl", function($routeParams, $scope, ItemFactory) {
+app.controller("ItemEditCtrl", function($location, $routeParams, $scope, ItemFactory) {
 	$scope.newTask = {};
 
 	ItemFactory.getSingleItem($routeParams.id)
