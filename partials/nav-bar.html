@@ -10,10 +10,12 @@
 			<a class="navbar-brand" href="#">Angular Todo</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav navbar-right" ng-if="user.uid">
 				<li><a href="#!/items/list">All Items</a></li>
 				<li><a href="#!/items/new">New Item</a></li>
 				<li><a href="#!/logout">Logout</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right" ng-if="!user.uid">
 				<li><a href="#!/auth">Authenticate</a></li>
 			</ul>
 		</div>

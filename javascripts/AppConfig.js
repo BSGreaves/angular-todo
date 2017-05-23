@@ -24,5 +24,9 @@ app.config(function($routeProvider) {
 		templateUrl: "partials/auth.html",
 		controller: "AuthCtrl"
 	})
+	.when("/logout", {
+		templateUrl: "partials/auth.html",
+		controller: "AuthCtrl"
+	})
 	.otherwise("items/list");
 });

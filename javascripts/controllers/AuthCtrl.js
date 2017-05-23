@@ -5,6 +5,12 @@ app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, 
 		password: "aaaaaa"
 	};
 
+	if($location.path() === "/logout") {
+		AuthFactory.logout();
+		$rootScope.user = {};
+		$location.url("/auth");
+	}
+
 	let logMeIn = () => {
 		AuthFactory.authenticate($scope.auth)
 		.then(userCreds => {
