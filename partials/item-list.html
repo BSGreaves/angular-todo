@@ -1,6 +1,6 @@
 <input type="text" placeholder="Search..." ng-model="searchText">
 <h3>Todo List</h3>
-<div ng-repeat="item in items | filter:{isCompleted:false} | filter: searchText">
+<div ng-repeat="item in items | orderBy: 'dueDate' |  filter:{isCompleted:false} | filter: searchText">
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="col-xs-1">
@@ -16,7 +16,7 @@
 	</div>
 </div>
 <h3>Completed</h3>
-<div ng-repeat="item in items | filter:{isCompleted:true}  | filter: searchText">
+<div ng-repeat="item in items | orderBy: 'dueDate' | filter:{isCompleted:true}  | filter: searchText">
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="col-xs-1">
