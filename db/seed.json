@@ -1,19 +1,32 @@
 {
-    "items": {
-        "item0": {
-            "isCompleted": true,
-            "task": "mow the lawn",
-            "assignedTo": "Callan"
-        },
-        "item1": {
-            "isCompleted": false,
-            "task": "grade quizzes",
-            "assignedTo": "Lauren"
-        },
-        "item2": {
-            "isCompleted": false,
-            "task": "take a nap",
-            "assignedTo": "Zoe"
-        }
+  "items" : {
+    "-KkIizVEWTVoalfqJCpp" : {
+      "assignedTo" : "1",
+      "isCompleted" : false,
+      "task" : "1",
+      "uid" : "ByZABDn7HOSETmPVgI8VIBqqvuK2"
+    },
+    "-KkIvwXTDJla5m4lUdjD" : {
+      "assignedTo" : "Boobooboo",
+      "isCompleted" : false,
+      "task" : "Hahaha",
+      "uid" : "ByZABDn7HOSETmPVgI8VIBqqvuK2"
+    },
+    "item2" : {
+      "assignedTo" : "Zoe",
+      "isCompleted" : true,
+      "task" : "take a nap",
+      "uid" : "RpYct5CdUVXh9g0U0vzN1UVBYX03"
     }
+  },
+  "users" : {
+    "-KkmgddqxayEosMNIvXK" : {
+      "uid" : "ByZABDn7HOSETmPVgI8VIBqqvuK2",
+      "username" : "a"
+    },
+    "-KkmgftS3jIzmj_yVbjf" : {
+      "uid" : "RpYct5CdUVXh9g0U0vzN1UVBYX03",
+      "username" : "b"
+    }
+  }
 }

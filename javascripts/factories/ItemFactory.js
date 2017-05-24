@@ -1,9 +1,9 @@
-app.factory("ItemFactory", function($http, $q, FIREBASE_CONFIG) {
+app.factory("ItemFactory", function($http, $q, $rootScope, FIREBASE_CONFIG) {
 
-	let getItemList = () => {
+	let getItemList = (userID) => {
 		let items = [];
 		return $q((resolve, reject) => {
-			$http.get(`${FIREBASE_CONFIG.databaseURL}/items.json`)
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/items.json?orderBy="uid"&equalTo="${userID}"`)
 			.then(fbItems => {
 				fbItems = fbItems.data;
 				if (fbItems !== null) {
@@ -40,7 +40,7 @@ app.factory("ItemFactory", function($http, $q, FIREBASE_CONFIG) {
 
 	let deleteItem = id => {
 		return $q((resolve, reject) => {
-			$http.delete(`${FIREBASE_CONFIG.databaseURL}/items/${item.id}.json`)
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/items/${id}.json`)
 			.then(result => resolve(result))
 			.catch(error => reject(error));
 		});
@@ -52,7 +52,8 @@ app.factory("ItemFactory", function($http, $q, FIREBASE_CONFIG) {
 				JSON.stringify({
 					assignedTo: item.assignedTo,
 					isCompleted: item.isCompleted,
-					task: item.task
+					task: item.task,
+					uid: item.uid
 				}))
 			.then(result => resolve(result))
 			.catch(error => reject(error));
