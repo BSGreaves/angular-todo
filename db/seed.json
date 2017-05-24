@@ -4,19 +4,22 @@
       "assignedTo" : "1",
       "isCompleted" : false,
       "task" : "1",
-      "uid" : "ByZABDn7HOSETmPVgI8VIBqqvuK2"
+      "uid" : "ByZABDn7HOSETmPVgI8VIBqqvuK2",
+      "dueDate" : "2017-06-02T05:00:00:000Z" 
     },
     "-KkIvwXTDJla5m4lUdjD" : {
       "assignedTo" : "Boobooboo",
       "isCompleted" : false,
       "task" : "Hahaha",
-      "uid" : "ByZABDn7HOSETmPVgI8VIBqqvuK2"
+      "uid" : "ByZABDn7HOSETmPVgI8VIBqqvuK2",
+      "dueDate" : "2017-06-02T05:00:00:000Z"
     },
     "item2" : {
       "assignedTo" : "Zoe",
       "isCompleted" : true,
       "task" : "take a nap",
-      "uid" : "RpYct5CdUVXh9g0U0vzN1UVBYX03"
+      "uid" : "RpYct5CdUVXh9g0U0vzN1UVBYX03",
+      "dueDate" : "2017-06-02T05:00:00:000Z"
     }
   },
   "users" : {
