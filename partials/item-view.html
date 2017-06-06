@@ -2,3 +2,7 @@
 <button class="btn btn-info"><a ng-href="#!/item/edit/{{selectedItem.id}}">Edit</a></button>
 <h2>Assigned to: {{selectedItem.assignedTo}}</h2>
 <h2>Completed?: {{selectedItem.isCompleted}}</h2>
+<h2>Tools:</h2>
+<ul>
+	<li ng-repeat="tool in tools">{{tool.implement}}</li>
+</ul>

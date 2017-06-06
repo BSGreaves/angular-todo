@@ -1,13 +1,13 @@
 {
   "items" : {
-    "-KkIizVEWTVoalfqJCpp" : {
+    "item0" : {
       "assignedTo" : "1",
       "isCompleted" : false,
       "task" : "1",
       "uid" : "ByZABDn7HOSETmPVgI8VIBqqvuK2",
       "dueDate" : "2017-06-02T05:00:00:000Z" 
     },
-    "-KkIvwXTDJla5m4lUdjD" : {
+    "item1" : {
       "assignedTo" : "Boobooboo",
       "isCompleted" : false,
       "task" : "Hahaha",
@@ -30,6 +30,24 @@
     "-KkmgftS3jIzmj_yVbjf" : {
       "uid" : "RpYct5CdUVXh9g0U0vzN1UVBYX03",
       "username" : "b"
+    }
+  },
+  "tools" : {
+    "tool0": {
+      "itemID" : "item1",
+      "implement" : "shovel"
+    },
+    "tool1": {
+      "itemID" : "item1",
+      "implement" : "shoes"
+    },
+    "tool2": {
+      "itemID" : "item0",
+      "implement" : "goat"
+    },
+    "tool3": {
+      "itemID" : "item2",
+      "implement" : "goat"
     }
   }
 }
