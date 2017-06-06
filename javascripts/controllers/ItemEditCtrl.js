@@ -2,7 +2,10 @@ app.controller("ItemEditCtrl", function($location, $routeParams, $scope, ItemFac
 	$scope.newTask = {};
 
 	ItemFactory.getSingleItem($routeParams.id)
-	.then(result => {console.log(result); $scope.newTask = result;})
+	.then(result => {
+		result.dueDate = new Date(result.dueDate);
+		$scope.newTask = result;
+	})
 	.catch(error => console.log("error in getSingleItem", error));
 
 	$scope.addNewItem = () => {
